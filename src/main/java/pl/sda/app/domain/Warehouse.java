@@ -1,6 +1,5 @@
 package pl.sda.app.domain;
 
-import javax.swing.text.StringContent;
 
 public class Warehouse {
     private int id;
