@@ -38,4 +38,8 @@ public class Product {
                 ", updateDate=" + updateDate +
                 '}';
     }
+
+    public void changeDescription(String description) {
+        this.description = description;
+    }
 }

@@ -28,6 +28,12 @@ public class ShopApp
         Product product = controllerProduct.find(productId);
         System.out.println(product);
 
+        String description = "playstation";
+        controllerProduct.changeDescription(productId,description);
+
+        product = controllerProduct.find(productId);
+        System.out.println(product);
+
 //        Warehouse warehouse = new Warehouse("Store no.6","Żabia","148","Kraków","30-830","Polska");
 //        try {
 //            session.getTransaction().begin();
