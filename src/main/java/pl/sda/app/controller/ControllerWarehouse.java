@@ -1,9 +1,8 @@
 package pl.sda.app.controller;
 
 import org.hibernate.Session;
-import pl.sda.app.domain.Product;
 import pl.sda.app.domain.Warehouse;
-import pl.sda.app.repository.MySqlRepositoryWarehouse;
+import pl.sda.app.repository.mysql.MySqlRepositoryWarehouse;
 
 public class ControllerWarehouse {
     private final Session session;

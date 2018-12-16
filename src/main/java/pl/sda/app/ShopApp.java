@@ -7,8 +7,7 @@ import pl.sda.app.domain.Warehouse;
 import pl.sda.app.hibernate.*;
 
 import org.hibernate.Session;
-import pl.sda.app.repository.MySqlRepositoryWarehouse;
-import pl.sda.app.repository.mysql.MySqlRepositoryProduct;
+import pl.sda.app.repository.mysql.MySqlRepositoryWarehouse;
 
 public class ShopApp
 {

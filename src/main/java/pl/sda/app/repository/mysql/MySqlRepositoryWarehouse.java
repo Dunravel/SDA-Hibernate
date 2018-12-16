@@ -1,4 +1,4 @@
-package pl.sda.app.repository;
+package pl.sda.app.repository.mysql;
 
 import org.hibernate.Session;
 import pl.sda.app.domain.Warehouse;
