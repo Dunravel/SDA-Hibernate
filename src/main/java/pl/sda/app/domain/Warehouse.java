@@ -3,7 +3,7 @@ package pl.sda.app.domain;
 import javax.persistence.*;
 
 @Entity
-@Table
+@Table(name = "Warehouses")
 public class Warehouse {
     @Id
     @GeneratedValue
