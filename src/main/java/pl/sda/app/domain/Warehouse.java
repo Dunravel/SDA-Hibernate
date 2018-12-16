@@ -23,7 +23,7 @@ public class Warehouse {
 
     private Warehouse() {}
 
-    public Warehouse(String name, String street, String buildingNumber, String city, String postalCode, String country, Owner owner) {
+    Warehouse(String name, String street, String buildingNumber, String city, String postalCode, String country, Owner owner) {
         this.name = name;
         this.street = street;
         this.buildingNumber = buildingNumber;
