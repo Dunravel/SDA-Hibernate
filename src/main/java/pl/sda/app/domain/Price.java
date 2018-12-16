@@ -12,7 +12,7 @@ public class Price {
     private float value;
     private String currency;
 
-    private Price() {};
+    private Price() {}
     public Price(float value, String currency) {
         this.value = value;
         this.currency = currency;
