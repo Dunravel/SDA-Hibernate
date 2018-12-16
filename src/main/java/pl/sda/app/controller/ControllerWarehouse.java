@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import pl.sda.app.domain.Owner;
 import pl.sda.app.domain.Warehouse;
 import pl.sda.app.domain.WarehouseFactory;
+import pl.sda.app.dto.WarehouseData;
 import pl.sda.app.repository.mysql.MySqlRepositoryWarehouse;
 
 import java.util.List;
@@ -18,8 +19,8 @@ public class ControllerWarehouse {
         this.mySqlRepositoryWarehouse = mySqlRepositoryWarehouse;
     }
 
-    public Integer create(String warehouse_name, String warehouse_street, String warehouse_building, String warehouse_city, String warehouse_postalcode, String warehouse_country, String ownerName, String ownerSex) {
-        Warehouse warehouse =  new WarehouseFactory().create(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country,ownerName, ownerSex);
+    public Integer create(WarehouseData warehouseData) {
+        Warehouse warehouse =  new WarehouseFactory().create(warehouseData);
 
         Integer id = null;
         try {

@@ -4,6 +4,7 @@ import pl.sda.app.controller.ControllerProductFactory;
 import pl.sda.app.controller.ControllerWarehouse;
 import pl.sda.app.domain.Product;
 import pl.sda.app.domain.Warehouse;
+import pl.sda.app.dto.WarehouseData;
 import pl.sda.app.hibernate.*;
 
 import org.hibernate.Session;
@@ -51,15 +52,17 @@ public class ShopApp
         MySqlRepositoryWarehouse mySqlRepositoryWarehouse = new MySqlRepositoryWarehouse(session);
         ControllerWarehouse controllerWarehouse = new ControllerWarehouse(session, mySqlRepositoryWarehouse);
 
-        String warehouse_name = "Store no.6";
-        String warehouse_street = "Żabia";
-        String warehouse_building = "148";
-        String warehouse_city = "Kraków";
-        String warehouse_postalcode = "30-830";
-        String warehouse_country = "Polska";
-        String ownerName = "Marcin";
-        String ownerSex = "Male";
-        Integer warehouseId = controllerWarehouse.create(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country, ownerName, ownerSex);
+        WarehouseData warehouseData = new WarehouseData();
+        warehouseData.name = "Store no.7";
+        warehouseData.street = "Żabia";
+        warehouseData.buildingNumber = "148";
+        warehouseData.city = "Kraków";
+        warehouseData.postalCode = "30-830";
+        warehouseData.country = "Polska";
+        warehouseData.ownerName = "Marcin";
+        warehouseData.ownerSex = "Male";
+
+        Integer warehouseId = controllerWarehouse.create(warehouseData);
         Warehouse warehouse = controllerWarehouse.find(warehouseId);
         System.out.println(warehouse);
 //
