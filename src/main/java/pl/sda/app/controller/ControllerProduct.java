@@ -1,6 +1,7 @@
 package pl.sda.app.controller;
 
 import org.hibernate.Session;
+import pl.sda.app.domain.Price;
 import pl.sda.app.domain.Product;
 import pl.sda.app.repository.mysql.MySqlRepositoryProduct;
 
@@ -17,7 +18,7 @@ public class ControllerProduct {
 
 
     public int craete(String name, String catalogNumber) {
-        Product product = new Product(name, catalogNumber);
+        Product product = new Product(name, catalogNumber, new Price(13, "PLN"));
         Integer id = null;
         try {
             session.getTransaction().begin();

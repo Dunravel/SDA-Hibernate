@@ -16,13 +16,16 @@ public class Product {
     private String description;
     private Timestamp updateDate;
 
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "price_id", nullable = false)
     private Price price;
 
     private Product(){}
 
-    public Product(String name, String catalogNumber) {
+    public Product(String name, String catalogNumber, Price price) {
         this.name = name;
         this.catalogNumber = catalogNumber;
+        this.price = price;
         this.updateDate =   new Timestamp(System.currentTimeMillis());
     }
 
@@ -33,6 +36,7 @@ public class Product {
         return "Product{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", price=" + price.toString() + '\'' +
                 ", catalogNumber='" + catalogNumber + '\'' +
                 ", description='" + description + '\'' +
                 ", updateDate=" + updateDate +

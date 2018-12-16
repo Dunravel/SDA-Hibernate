@@ -38,7 +38,7 @@ public class ShopApp
         product = controllerProduct.find(productId);
         System.out.println(product);
 
-        controllerProduct.deleteProduct(productId);
+        //controllerProduct.deleteProduct(productId);
 
         product = controllerProduct.find(productId);
         System.out.println(product);
@@ -46,23 +46,24 @@ public class ShopApp
         List<Product> products = controllerProduct.findAll();
         products.forEach(System.out::println);
 
-        String warehouse_name = "Store no.6";
-        String warehouse_street = "Żabia";
-        String warehouse_building = "148";
-        String warehouse_city = "Kraków";
-        String warehouse_postalcode = "30-830";
-        String warehouse_country = "Polska";
+
 
         MySqlRepositoryWarehouse mySqlRepositoryWarehouse = new MySqlRepositoryWarehouse(session);
         ControllerWarehouse controllerWarehouse = new ControllerWarehouse(session, mySqlRepositoryWarehouse);
 
-        Integer warehouseId = controllerWarehouse.create(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country);
-        Warehouse warehouse = controllerWarehouse.find(warehouseId);
-        System.out.println(warehouse);
-
-        controllerWarehouse.updateName(warehouseId,"New Stock");
-
-        controllerWarehouse.delete(warehouseId);
+//        String warehouse_name = "Store no.6";
+//        String warehouse_street = "Żabia";
+//        String warehouse_building = "148";
+//        String warehouse_city = "Kraków";
+//        String warehouse_postalcode = "30-830";
+//        String warehouse_country = "Polska";
+//        Integer warehouseId = controllerWarehouse.create(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country);
+//        Warehouse warehouse = controllerWarehouse.find(warehouseId);
+//        System.out.println(warehouse);
+//
+//        controllerWarehouse.updateName(warehouseId,"New Stock");
+//
+//        controllerWarehouse.delete(warehouseId);
 
         List<Warehouse> warehouses  = controllerWarehouse.findAll();
         warehouses.forEach(System.out::println);
