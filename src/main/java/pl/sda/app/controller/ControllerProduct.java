@@ -50,4 +50,19 @@ public class ControllerProduct {
         }
 
     }
+
+    public void deleteProduct(Integer productId) {
+        Product product = find(productId);
+        try {
+            session.getTransaction().begin();
+
+            mySqlRepositoryProduct.delete(product);
+
+            session.getTransaction().commit();
+        } catch(Exception e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+
+    }
 }

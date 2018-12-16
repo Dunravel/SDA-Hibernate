@@ -34,6 +34,8 @@ public class ShopApp
         product = controllerProduct.find(productId);
         System.out.println(product);
 
+        controllerProduct.deleteProduct(productId);
+
 //        Warehouse warehouse = new Warehouse("Store no.6","Żabia","148","Kraków","30-830","Polska");
 //        try {
 //            session.getTransaction().begin();
