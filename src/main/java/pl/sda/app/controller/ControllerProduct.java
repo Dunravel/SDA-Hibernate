@@ -1,6 +1,7 @@
 package pl.sda.app.controller;
 
 import org.hibernate.Session;
+import pl.sda.app.domain.Currency;
 import pl.sda.app.domain.Price;
 import pl.sda.app.domain.Product;
 import pl.sda.app.domain.ProductFactory;
@@ -12,13 +13,13 @@ public class ControllerProduct {
     private final Session session;
     private final MySqlRepositoryProduct mySqlRepositoryProduct;
 
-    public ControllerProduct(Session session, MySqlRepositoryProduct mySqlRepositoryProduct) {
+    ControllerProduct(Session session, MySqlRepositoryProduct mySqlRepositoryProduct) {
         this.session = session;
         this.mySqlRepositoryProduct = mySqlRepositoryProduct;
     }
 
 
-    public int create(String name, String catalogNumber, float value, String currency) {
+    public int create(String name, String catalogNumber, float value, Currency currency) {
         Product product = new ProductFactory().create(name,catalogNumber,value,currency);
         Integer id = null;
         try {

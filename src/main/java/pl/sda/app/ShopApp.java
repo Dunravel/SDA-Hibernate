@@ -2,6 +2,7 @@ package pl.sda.app;
 import pl.sda.app.controller.ControllerProduct;
 import pl.sda.app.controller.ControllerProductFactory;
 import pl.sda.app.controller.ControllerWarehouse;
+import pl.sda.app.domain.Currency;
 import pl.sda.app.domain.Product;
 import pl.sda.app.domain.Warehouse;
 import pl.sda.app.dto.WarehouseData;
@@ -28,7 +29,7 @@ public class ShopApp
         String catalogNumber = "910-000444";
         String name = "PC";
         float value = 10;
-        String currency = "PLN";
+        Currency currency = Currency.PLN;
 
         Integer productId = controllerProduct.create(name, catalogNumber, value,currency);
 //

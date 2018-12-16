@@ -10,10 +10,11 @@ public class Price {
     @Column(name = "price_id")
     private int id;
     private float value;
-    private String currency;
+    @Enumerated(EnumType.STRING)
+    private Currency currency;
 
     private Price() {}
-    public Price(float value, String currency) {
+    Price(float value, Currency currency) {
         this.value = value;
         this.currency = currency;
     }
