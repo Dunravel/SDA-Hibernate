@@ -25,10 +25,12 @@ public class ShopApp
         ControllerProduct controllerProduct = factory.create(session);
 
         // Jeżeli robimty tylko odczyt, to nie potrzebujemy Try Catch, jeżeli zmieniamy coś na bazie to trzeba zrobić.
-//        String catalogNumber = "910-000444";
-//        String name = "PC";
-//
-//        Integer productId = controllerProduct.craete(name, catalogNumber);
+        String catalogNumber = "910-000444";
+        String name = "PC";
+        float value = 10;
+        String currency = "PLN";
+
+        Integer productId = controllerProduct.create(name, catalogNumber, value,currency);
 //
 //        Product product = controllerProduct.find(productId);
 //        System.out.println(product);
@@ -52,19 +54,19 @@ public class ShopApp
         MySqlRepositoryWarehouse mySqlRepositoryWarehouse = new MySqlRepositoryWarehouse(session);
         ControllerWarehouse controllerWarehouse = new ControllerWarehouse(session, mySqlRepositoryWarehouse);
 
-        WarehouseData warehouseData = new WarehouseData();
-        warehouseData.name = "Store no.7";
-        warehouseData.street = "Żabia";
-        warehouseData.buildingNumber = "148";
-        warehouseData.city = "Kraków";
-        warehouseData.postalCode = "30-830";
-        warehouseData.country = "Polska";
-        warehouseData.ownerName = "Marcin";
-        warehouseData.ownerSex = "Male";
-
-        Integer warehouseId = controllerWarehouse.create(warehouseData);
-        Warehouse warehouse = controllerWarehouse.find(warehouseId);
-        System.out.println(warehouse);
+//        WarehouseData warehouseData = new WarehouseData();
+//        warehouseData.name = "Store no.7";
+//        warehouseData.street = "Żabia";
+//        warehouseData.buildingNumber = "148";
+//        warehouseData.city = "Kraków";
+//        warehouseData.postalCode = "30-830";
+//        warehouseData.country = "Polska";
+//        warehouseData.ownerName = "Marcin";
+//        warehouseData.ownerSex = "Male";
+//
+//        Integer warehouseId = controllerWarehouse.create(warehouseData);
+//        Warehouse warehouse = controllerWarehouse.find(warehouseId);
+//        System.out.println(warehouse);
 //
 //        controllerWarehouse.updateName(warehouseId,"New Stock");
 //          controllerWarehouse.updateName(2,"Stock 2");
