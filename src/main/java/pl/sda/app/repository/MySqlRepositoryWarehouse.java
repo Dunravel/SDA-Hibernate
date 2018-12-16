@@ -14,4 +14,8 @@ public class MySqlRepositoryWarehouse {
     public Integer save(Warehouse warehouse) {
         return (Integer) session.save(warehouse);
     }
+
+    public Warehouse find(Integer warehouseId) {
+        return session.find(Warehouse.class, warehouseId);
+    }
 }

@@ -54,7 +54,9 @@ public class ShopApp
         ControllerWarehouse controllerWarehouse = new ControllerWarehouse(session, mySqlRepositoryWarehouse);
 
         Integer warehouseId = controllerWarehouse.create(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country);
-        //Warehouse warehouse = controllerWarehouse.find(warehouseId);
+        Warehouse warehouse = controllerWarehouse.find(warehouseId);
+
+        System.out.println(warehouse);
 
 
         session.close();

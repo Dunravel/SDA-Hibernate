@@ -1,6 +1,7 @@
 package pl.sda.app.controller;
 
 import org.hibernate.Session;
+import pl.sda.app.domain.Product;
 import pl.sda.app.domain.Warehouse;
 import pl.sda.app.repository.MySqlRepositoryWarehouse;
 
@@ -30,4 +31,7 @@ public class ControllerWarehouse {
         return id;
     }
 
+    public Warehouse find(Integer warehouseId) {
+        return mySqlRepositoryWarehouse.find(warehouseId);
+    }
 }
