@@ -1,14 +1,12 @@
 package pl.sda.app.domain;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table
 public class Warehouse {
     @Id
+    @GeneratedValue
     @Column(name = "warehouse_id")
     private int id;
     private String name;
