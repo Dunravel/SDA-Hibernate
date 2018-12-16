@@ -34,4 +34,19 @@ public class ControllerWarehouse {
     public Warehouse find(Integer warehouseId) {
         return mySqlRepositoryWarehouse.find(warehouseId);
     }
+
+
+    public void updateName(Integer warehouseId, String new_stock) {
+        Warehouse warehouse = find(warehouseId);
+        try {
+            session.getTransaction().begin();
+
+            mySqlRepositoryWarehouse.updateName(warehouse);
+
+            session.getTransaction().commit();
+        } catch(Exception e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+    }
 }

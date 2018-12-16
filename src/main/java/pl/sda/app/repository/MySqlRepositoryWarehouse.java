@@ -18,4 +18,8 @@ public class MySqlRepositoryWarehouse {
     public Warehouse find(Integer warehouseId) {
         return session.find(Warehouse.class, warehouseId);
     }
+
+    public void updateName(Warehouse warehouse) {
+        session.update(warehouse);
+    }
 }
