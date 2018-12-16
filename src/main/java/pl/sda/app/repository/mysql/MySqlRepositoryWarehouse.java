@@ -30,7 +30,7 @@ public class MySqlRepositoryWarehouse {
         session.delete(warehouse);
     }
 
-    public List<Product> findAll() {
+    public List<Warehouse> findAll() {
         return session
                 .createQuery("From Warehouse")
                 .list();

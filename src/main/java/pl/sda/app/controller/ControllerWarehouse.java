@@ -67,7 +67,7 @@ public class ControllerWarehouse {
         }
     }
 
-    public List<Product> findAll() {
+    public List<Warehouse> findAll() {
         return mySqlRepositoryWarehouse.findAll();
     }
 }

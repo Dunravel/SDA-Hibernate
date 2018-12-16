@@ -64,11 +64,10 @@ public class ShopApp
 
         controllerWarehouse.delete(warehouseId);
 
-        controllerWarehouse.findAll();
-
+        List<Warehouse> warehouses  = controllerWarehouse.findAll();
+        warehouses.forEach(System.out::println);
 
         session.close();
         HibernateSessionRegistry.shutdown();
-
     }
 }
