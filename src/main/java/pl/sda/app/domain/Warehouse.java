@@ -17,16 +17,20 @@ public class Warehouse {
     @Column(name = "postal_code")
     private String postalCode;
     private String country;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "owner_id", nullable = false)
+    private Owner owner;
 
     private Warehouse() {}
 
-    public Warehouse(String name, String street, String buildingNumber, String city, String postalCode, String country) {
+    public Warehouse(String name, String street, String buildingNumber, String city, String postalCode, String country, Owner owner) {
         this.name = name;
         this.street = street;
         this.buildingNumber = buildingNumber;
         this.city = city;
         this.postalCode = postalCode;
         this.country = country;
+        this.owner = owner;
     }
 
     @Override
@@ -39,6 +43,7 @@ public class Warehouse {
                 ", city='" + city + '\'' +
                 ", postalCode='" + postalCode + '\'' +
                 ", country='" + country + '\'' +
+                ", owner='" + owner + '\'' +
                 '}';
     }
 

@@ -51,15 +51,15 @@ public class ShopApp
         MySqlRepositoryWarehouse mySqlRepositoryWarehouse = new MySqlRepositoryWarehouse(session);
         ControllerWarehouse controllerWarehouse = new ControllerWarehouse(session, mySqlRepositoryWarehouse);
 
-//        String warehouse_name = "Store no.6";
-//        String warehouse_street = "Żabia";
-//        String warehouse_building = "148";
-//        String warehouse_city = "Kraków";
-//        String warehouse_postalcode = "30-830";
-//        String warehouse_country = "Polska";
-//        Integer warehouseId = controllerWarehouse.create(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country);
-//        Warehouse warehouse = controllerWarehouse.find(warehouseId);
-//        System.out.println(warehouse);
+        String warehouse_name = "Store no.6";
+        String warehouse_street = "Żabia";
+        String warehouse_building = "148";
+        String warehouse_city = "Kraków";
+        String warehouse_postalcode = "30-830";
+        String warehouse_country = "Polska";
+        Integer warehouseId = controllerWarehouse.create(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country);
+        Warehouse warehouse = controllerWarehouse.find(warehouseId);
+        System.out.println(warehouse);
 //
 //        controllerWarehouse.updateName(warehouseId,"New Stock");
 //

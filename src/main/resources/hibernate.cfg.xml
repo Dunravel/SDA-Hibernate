@@ -17,5 +17,6 @@
         <mapping class="pl.sda.app.domain.Product"/>
         <mapping class="pl.sda.app.domain.Warehouse"/>
         <mapping class="pl.sda.app.domain.Price"/>
+        <mapping class="pl.sda.app.domain.Owner"/>
     </session-factory>
 </hibernate-configuration>
