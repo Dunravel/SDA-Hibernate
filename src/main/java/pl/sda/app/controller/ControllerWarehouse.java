@@ -14,7 +14,20 @@ public class ControllerWarehouse {
         this.mySqlRepositoryWarehouse = mySqlRepositoryWarehouse;
     }
 
-    public Warehouse create(String warehouse_name, String warehouse_street, String warehouse_building, String warehouse_city, String warehouse_postalcode, String warehouse_country) {
-        return new Warehouse(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country);
+    public Integer create(String warehouse_name, String warehouse_street, String warehouse_building, String warehouse_city, String warehouse_postalcode, String warehouse_country) {
+        Warehouse warehouse = new Warehouse(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country);
+        Integer id = null;
+        try {
+            session.getTransaction().begin();
+
+            id =  mySqlRepositoryWarehouse.save(warehouse);
+
+            session.getTransaction().commit();
+        } catch(Exception e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+        return id;
     }
+
 }

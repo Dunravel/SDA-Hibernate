@@ -50,21 +50,13 @@ public class ShopApp
         String warehouse_postalcode = "30-830";
         String warehouse_country = "Polska";
 
-        MySqlRepositoryWarehouse mySqlRepositoryWarehouse = new MySqlRepositoryWarehouse();
+        MySqlRepositoryWarehouse mySqlRepositoryWarehouse = new MySqlRepositoryWarehouse(session);
         ControllerWarehouse controllerWarehouse = new ControllerWarehouse(session, mySqlRepositoryWarehouse);
 
-        Warehouse warehouse = controllerWarehouse.create(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country);
+        Integer warehouseId = controllerWarehouse.create(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country);
+        //Warehouse warehouse = controllerWarehouse.find(warehouseId);
 
-        try {
-            session.getTransaction().begin();
 
-            Integer warehouseId = (Integer) session.save(warehouse);
-
-            session.getTransaction().commit();
-        } catch(Exception e){
-            e.printStackTrace();
-            session.getTransaction().rollback();
-        }
         session.close();
         HibernateSessionRegistry.shutdown();
 
