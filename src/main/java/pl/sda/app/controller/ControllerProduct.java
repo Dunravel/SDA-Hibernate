@@ -28,6 +28,10 @@ public class ControllerProduct {
             session.getTransaction().rollback();
         }
 
-        return id
+        return id;
+    }
+
+    public Product find(Integer productId) {
+        return mySqlRepositoryProduct.findByID(productId);
     }
 }

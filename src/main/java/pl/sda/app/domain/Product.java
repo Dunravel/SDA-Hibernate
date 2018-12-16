@@ -28,4 +28,14 @@ public class Product {
 
     }
 
+    @Override
+    public String toString() {
+        return "Product{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", catalogNumber='" + catalogNumber + '\'' +
+                ", description='" + description + '\'' +
+                ", updateDate=" + updateDate +
+                '}';
+    }
 }

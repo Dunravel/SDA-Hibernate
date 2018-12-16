@@ -1,5 +1,6 @@
 package pl.sda.app;
 import pl.sda.app.controller.ControllerProduct;
+import pl.sda.app.domain.Product;
 import pl.sda.app.domain.Warehouse;
 import pl.sda.app.hibernate.*;
 
@@ -24,18 +25,20 @@ public class ShopApp
 
         Integer productId = controllerProduct.craete(name, catalogNumber);
 
+        Product product = controllerProduct.find(productId);
+        System.out.println(product);
 
-        Warehouse warehouse = new Warehouse("Store no.6","Żabia","148","Kraków","30-830","Polska");
-        try {
-            session.getTransaction().begin();
-
-            Integer warehouseId = (Integer) session.save(warehouse);
-
-            session.getTransaction().commit();
-        } catch(Exception e){
-            e.printStackTrace();
-            session.getTransaction().rollback();
-        }
+//        Warehouse warehouse = new Warehouse("Store no.6","Żabia","148","Kraków","30-830","Polska");
+//        try {
+//            session.getTransaction().begin();
+//
+//            Integer warehouseId = (Integer) session.save(warehouse);
+//
+//            session.getTransaction().commit();
+//        } catch(Exception e){
+//            e.printStackTrace();
+//            session.getTransaction().rollback();
+//        }
         session.close();
         HibernateSessionRegistry.shutdown();
 
