@@ -22,4 +22,8 @@ public class MySqlRepositoryWarehouse {
     public void updateName(Warehouse warehouse) {
         session.update(warehouse);
     }
+
+    public void delete(Warehouse warehouse) {
+        session.delete(warehouse);
+    }
 }

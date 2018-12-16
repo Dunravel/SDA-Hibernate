@@ -36,12 +36,27 @@ public class ControllerWarehouse {
     }
 
 
-    public void updateName(Integer warehouseId, String new_stock) {
+    public void updateName(Integer warehouseId, String name) {
         Warehouse warehouse = find(warehouseId);
+        warehouse.changeName(name);
         try {
             session.getTransaction().begin();
 
             mySqlRepositoryWarehouse.updateName(warehouse);
+
+            session.getTransaction().commit();
+        } catch(Exception e){
+            e.printStackTrace();
+            session.getTransaction().rollback();
+        }
+    }
+
+    public void delete(Integer warehouseId) {
+        Warehouse warehouse = find(warehouseId);
+        try {
+            session.getTransaction().begin();
+
+            mySqlRepositoryWarehouse.delete(warehouse);
 
             session.getTransaction().commit();
         } catch(Exception e){

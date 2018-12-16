@@ -59,6 +59,8 @@ public class ShopApp
 
         controllerWarehouse.updateName(warehouseId,"New Stock");
 
+        controllerWarehouse.delete(warehouseId);
+
 
         session.close();
         HibernateSessionRegistry.shutdown();

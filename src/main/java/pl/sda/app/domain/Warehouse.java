@@ -41,4 +41,9 @@ public class Warehouse {
                 ", country='" + country + '\'' +
                 '}';
     }
+
+    public void changeName(String name) {
+
+        this.name = name;
+    }
 }
