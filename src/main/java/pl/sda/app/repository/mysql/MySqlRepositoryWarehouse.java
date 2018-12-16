@@ -1,7 +1,10 @@
 package pl.sda.app.repository.mysql;
 
 import org.hibernate.Session;
+import pl.sda.app.domain.Product;
 import pl.sda.app.domain.Warehouse;
+
+import java.util.List;
 
 public class MySqlRepositoryWarehouse {
     private final Session session;
@@ -25,5 +28,11 @@ public class MySqlRepositoryWarehouse {
 
     public void delete(Warehouse warehouse) {
         session.delete(warehouse);
+    }
+
+    public List<Product> findAll() {
+        return session
+                .createQuery("From Warehouse")
+                .list();
     }
 }

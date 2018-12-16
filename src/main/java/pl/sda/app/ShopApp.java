@@ -64,6 +64,8 @@ public class ShopApp
 
         controllerWarehouse.delete(warehouseId);
 
+        controllerWarehouse.findAll();
+
 
         session.close();
         HibernateSessionRegistry.shutdown();

@@ -1,8 +1,11 @@
 package pl.sda.app.controller;
 
 import org.hibernate.Session;
+import pl.sda.app.domain.Product;
 import pl.sda.app.domain.Warehouse;
 import pl.sda.app.repository.mysql.MySqlRepositoryWarehouse;
+
+import java.util.List;
 
 public class ControllerWarehouse {
     private final Session session;
@@ -62,5 +65,9 @@ public class ControllerWarehouse {
             e.printStackTrace();
             session.getTransaction().rollback();
         }
+    }
+
+    public List<Product> findAll() {
+        return mySqlRepositoryWarehouse.findAll();
     }
 }
