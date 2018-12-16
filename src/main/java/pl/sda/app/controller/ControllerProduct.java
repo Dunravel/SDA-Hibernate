@@ -4,6 +4,8 @@ import org.hibernate.Session;
 import pl.sda.app.domain.Product;
 import pl.sda.app.repository.mysql.MySqlRepositoryProduct;
 
+import java.util.List;
+
 public class ControllerProduct {
     private final Session session;
     private final MySqlRepositoryProduct mySqlRepositoryProduct;
@@ -64,5 +66,9 @@ public class ControllerProduct {
             session.getTransaction().rollback();
         }
 
+    }
+
+    public List<Product> findAll() {
+        return mySqlRepositoryProduct.findAll();
     }
 }

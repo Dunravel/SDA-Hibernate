@@ -9,6 +9,8 @@ import pl.sda.app.hibernate.*;
 import org.hibernate.Session;
 import pl.sda.app.repository.mysql.MySqlRepositoryWarehouse;
 
+import java.util.List;
+
 public class ShopApp
 {
 
@@ -41,6 +43,8 @@ public class ShopApp
         product = controllerProduct.find(productId);
         System.out.println(product);
 
+        List<Product> products = controllerProduct.findAll();
+        products.forEach(System.out::println);
 
         String warehouse_name = "Store no.6";
         String warehouse_street = "Żabia";
