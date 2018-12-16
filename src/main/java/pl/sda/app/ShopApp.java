@@ -23,7 +23,7 @@ public class ShopApp
         ControllerProductFactory factory = new ControllerProductFactory();
         ControllerProduct controllerProduct = factory.create(session);
 
-        // Jeżeli robimty tylko odczyt, to nie potrzebujemy Try Catch, jeżeli zmieniamy coś na bazie to lepiej jest zrobić.
+        // Jeżeli robimty tylko odczyt, to nie potrzebujemy Try Catch, jeżeli zmieniamy coś na bazie to trzeba zrobić.
         String catalogNumber = "910-000444";
         String name = "PC";
 

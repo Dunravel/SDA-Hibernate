@@ -10,13 +10,15 @@ public class Product {
     @GeneratedValue
     @Column(name = "product_id")
     private int id;
-
     private String name;
     @Column(name = "catalog_number")
     private String catalogNumber;
-
     private String description;
     private Timestamp updateDate;
+
+    private Price price;
+
+    private Product(){}
 
     public Product(String name, String catalogNumber) {
         this.name = name;
@@ -24,9 +26,7 @@ public class Product {
         this.updateDate =   new Timestamp(System.currentTimeMillis());
     }
 
-    private Product(){
 
-    }
 
     @Override
     public String toString() {
