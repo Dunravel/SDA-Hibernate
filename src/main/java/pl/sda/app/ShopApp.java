@@ -24,24 +24,24 @@ public class ShopApp
         ControllerProduct controllerProduct = factory.create(session);
 
         // Jeżeli robimty tylko odczyt, to nie potrzebujemy Try Catch, jeżeli zmieniamy coś na bazie to trzeba zrobić.
-        String catalogNumber = "910-000444";
-        String name = "PC";
-
-        Integer productId = controllerProduct.craete(name, catalogNumber);
-
-        Product product = controllerProduct.find(productId);
-        System.out.println(product);
-
-        String description = "playstation";
-        controllerProduct.changeDescription(productId,description);
-
-        product = controllerProduct.find(productId);
-        System.out.println(product);
+//        String catalogNumber = "910-000444";
+//        String name = "PC";
+//
+//        Integer productId = controllerProduct.craete(name, catalogNumber);
+//
+//        Product product = controllerProduct.find(productId);
+//        System.out.println(product);
+//
+//        String description = "playstation";
+//        controllerProduct.changeDescription(productId,description);
+//
+//        product = controllerProduct.find(productId);
+//        System.out.println(product);
 
         //controllerProduct.deleteProduct(productId);
 
-        product = controllerProduct.find(productId);
-        System.out.println(product);
+//        product = controllerProduct.find(productId);
+//        System.out.println(product);
 
         List<Product> products = controllerProduct.findAll();
         products.forEach(System.out::println);
@@ -57,11 +57,15 @@ public class ShopApp
         String warehouse_city = "Kraków";
         String warehouse_postalcode = "30-830";
         String warehouse_country = "Polska";
-        Integer warehouseId = controllerWarehouse.create(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country);
+        String ownerName = "Marcin";
+        String ownerSex = "Male";
+        Integer warehouseId = controllerWarehouse.create(warehouse_name,warehouse_street,warehouse_building,warehouse_city,warehouse_postalcode,warehouse_country, ownerName, ownerSex);
         Warehouse warehouse = controllerWarehouse.find(warehouseId);
         System.out.println(warehouse);
 //
 //        controllerWarehouse.updateName(warehouseId,"New Stock");
+//          controllerWarehouse.updateName(2,"Stock 2");
+//          controllerWarehouse.updateName(3,"Stock 3");
 //
 //        controllerWarehouse.delete(warehouseId);
 
